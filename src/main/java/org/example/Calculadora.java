@@ -73,7 +73,16 @@ public class Calculadora {
         return resultado;
     }
 
-    //TO - DO: Validar el número de argumentos
+    public static void validate(int... numeros) {
+        if (numeros.length == 0) {
+            throw new IllegalArgumentException("No se puede dividir entre cero");
+        }
+        for (int numero : numeros) {
+            if (numero == 0) {
+                throw new IllegalArgumentException("No se puede dividir entre cero");
+            }
+        }
+    }
 
 
 }
